@@ -16,9 +16,13 @@ If you don't have docker or podman, install using
 
     sudo apt install podman-docker
 
-If using podman, define
+If you are using podman for building, define
 
     export BUILDAH_FORMAT=docker
+
+Optional: For build or using singularity containers, install
+
+    sudo apt install singularity-container
 
 Build the image
 
