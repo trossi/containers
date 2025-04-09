@@ -1,15 +1,12 @@
-FROM docker.io/rocm/dev-ubuntu-22.04:6.2.4-complete
+FROM docker.io/rocm/dev-ubuntu-22.04:6.2.4
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PIP_NO_CACHE_DIR=1 \
     PIP_ROOT_USER_ACTION=ignore
 
-# Install packages via apt-get
+# Install packages
 RUN apt-get update -qy && \
     apt-get install -qy \
-        build-essential \
-        gfortran \
-        libopenblas-openmp-dev \
         python3 \
         python-is-python3 \
         python3-dev \
@@ -56,7 +53,7 @@ RUN python3 -m pip install \
 RUN python3 -m pip install \
         ipywidgets==7.7.2
 
-# Install remaining jupyter packages
+# Install remaining common jupyter packages
 RUN python3 -m pip install \
         jupyter \
         jupyterlab \
