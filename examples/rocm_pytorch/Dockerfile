@@ -15,6 +15,7 @@ RUN apt-get update -qy && \
         git \
         wget \
         libjpeg-dev \
+        libglib2.0-dev \
         && \
     apt-get clean
 
